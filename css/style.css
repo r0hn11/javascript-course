@@ -10,7 +10,7 @@
 }
 body{
     width: 100%;
-    background: #333;
+    background: #222;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,6 +116,7 @@ li{padding: 3px; margin-left: 1.3em; font-size: 12px;}
     transition: 0.2s ease-in-out;
     position: relative;
     display: flex;
+    color: #ddd;
     align-items: center;
 }
 #txt::before, #txt::after{
@@ -135,4 +136,24 @@ li{padding: 3px; margin-left: 1.3em; font-size: 12px;}
     margin: 20px auto;
     border-radius: 50%;
     border: 2px solid #fff;
+}
+.opts{
+    margin: 20px 0;
+    font-size: 0.85em;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+}
+.opts>input{
+    background: transparent;
+    border: 2px solid #ddd;
+    border-radius: 100px;
+    padding: 5px 10px;
+    outline: none;
+    color: #aaa;
+    font-family: poppins;
+    letter-spacing: 1px;
+    display: none;
+    text-align: center;
 }
