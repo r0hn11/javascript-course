@@ -20,22 +20,27 @@ do {
     console.log('unskipped')
 } while (k<=12);
 
-
+////////////////////
+// foreach
 let arr = ['t1','t2','t3','t4','t5']
 
 arr.forEach((element, index, array)=>{
     console.log(element, index, array)
 })
 
-
-
-
+///////////////////
 const user = {
     name: 'Rohn',
     domain: 'Web dev',
     level: 20
 }
 
+// for...in
 for(let key in user){
     console.log(`${key}- ${user[key]}`)
+}
+
+// for...of
+for(let x of arr){
+    console.log(x);
 }

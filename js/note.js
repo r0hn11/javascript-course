@@ -1,7 +1,7 @@
 // create a notes app
 
 if(location.href.slice(location.href.lastIndexOf('/'),).includes('note.html')){}
-else{location.href = '../note.html'}
+else{window.open('projects/note.html')}
 
 const menu_icon = document.getElementById('menu_icon')
 const menu = document.getElementById('menu')

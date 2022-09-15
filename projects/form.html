@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+<body class="flex-col" id="body">
+
+    <div id="warning"><p></p></div>
+
+    <div id="stat"></div>
+
+    <div id="root" class="flex-col">
+
+        <h1 id="ttl">Regex<br>Validation</h1>
+        <form id="form" class="flex-col" autocomplete="off">
+
+            <div class="un inp_par flex-col">
+                <label for="uname">Username</label>
+                <input type="text" id="uname" required autocomplete="off">
+            </div>
+
+            <div class="ml inp_par flex-col">
+                <label for="mail">Email</label>
+                <input type="email" id="mail" required autocomplete="off">
+            </div>
+                        
+            <div class="pw inp_par flex-col">
+                <label for="pass">Passcode</label>
+                <input type="password" id="pass" required autocomplete="off">
+            </div>
+
+            <div class="ph inp_par flex-col">
+                <label for="phone">Contact no.</label>
+                <input type="number" id="phone" required autocomplete="off">
+            </div>
+
+            <div class="pt inp_par flex-col">
+                <label for="ptypes" class="flex-row">Personality type
+                    <span id="info">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 400c-18 0-32-14-32-32s13.1-32 32-32c17.1 0 32 14 32 32S273.1 400 256 400zM325.1 258L280 286V288c0 13-11 24-24 24S232 301 232 288V272c0-8 4-16 12-21l57-34C308 213 312 206 312 198C312 186 301.1 176 289.1 176h-51.1C225.1 176 216 186 216 198c0 13-11 24-24 24s-24-11-24-24C168 159 199 128 237.1 128h51.1C329 128 360 159 360 198C360 222 347 245 325.1 258z"/></svg>
+                    </span>
+                </label>
+                <select name="ptypes" id="ptypes">
+                    <option value="def" selected disabled>Unknown</option>
+                    <option value="e">Extrovert</option>
+                    <option value="s">Sensor</option>
+                    <option value="t">Thinker</option>
+                    <option value="j">Judger</option>
+                    <option value="i">Introvert</option>
+                    <option value="n">Intuitive</option>
+                    <option value="f">Feeler</option>
+                    <option value="p">Perceiver</option>
+                </select>
+                <div id="msg2" class="flex-col hidden">
+                    <div class="ei flex-col">
+                        <h4>Extrovert</h4>
+                        <p>Extroverts are energized by people, enjoy a variety of tasks, a quick pace, and are good at multitasking.</p>
+                    </div>
+                    <div class="si flex-col">
+                        <h4>Sensor</h4>
+                        <p>Sensors are realistic people who will like to focus on the facts and details. They apply common sense and past experience to find practical solutions to problems.</p>
+                    </div>
+                    <div class="ti flex-col">
+                        <h4>Thinker</h4>
+                        <p>Thinkers tend to make their decisions using logical analysis, objectively weigh pros and cons, and value honesty, consistency and fairness.</p>
+                    </div>
+                    <div class="ji flex-col">
+                        <h4>Judger</h4>
+                        <p>Judgers tend to be organized and prepared, like to make and stck to plans, and are comfortable following most rules.</p>
+                    </div>
+                    <div class="ii flex-col">
+                        <h4>Introvert</h4>
+                        <p>Introverts often like working alone or in small groups, prefer a more deliberate pace and like to focus on one task at a time.</p>
+                    </div>
+                    <div class="ni flex-col">
+                        <h4>Intuitive</h4>
+                        <p>Intuitives prefer to focus on possibilities and the big picture, easily see patterns, value innovation, and seek creative solutions to problems.</p>
+                    </div>
+                    <div class="fi flex-col">
+                        <h4>Feeler</h4>
+                        <p>Feelers tend to be sensitive and cooperative, and decide based on their own personal values and how others will be affected by their actions.</p>
+                    </div>
+                    <div class="pi flex-col">
+                        <h4>Perceiver</h4>
+                        <p>Perceivers prefer to keep their options open, like to be able to act spontaneously, and like to be flexible with making plans.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ut inp_par flex-col">
+                <label for="untxt">Unlock text</label>
+                <textarea name="untxt" id="untxt" cols="30" rows="3" required autocomplete="off"></textarea>
+            </div>
+
+            <div class="btn flex-col">
+                <button type="submit" id="submit">Submit</button>
+            </div>
+        </form>
+        
+        <div id="unlocktext">1we ow tfied by rwos of the la thrh faith ieus Chwest, so asve ira of od, for if rigouss were trogh the law, thenrist ied orppose.</div>
+
+    </div>
+</body>
+<script src="../js/29_regex_validation.js"></script>
+</html>

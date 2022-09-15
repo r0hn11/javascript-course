@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+    letter-spacing: 1px;
+    transition: 0.2s ease-in-out;
+}
+::selection{
+    background: transparent;
+    color: #fff;
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+}
+
+.flex-row{display: flex;}
+.flex-col{display: flex; flex-direction: column;}
+
+body{
+    width: 100%;
+    background: #222;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    position: relative;
+    font-size: 16px;
+}
+
+#root{
+    justify-content: flex-start;
+    position: relative;
+    min-height: 100vh;
+    min-width: 100%;
+    padding: 150px 50px 50px 50px;
+    overflow-x: hidden;
+}
+
+#title{
+    font-weight: 700;
+    font-size: 20em;
+    opacity: 0.05;
+    position: absolute;
+    top: -0.5em;
+    left: -0.2em;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    z-index: -1;
+}
+
+#root>section>.heading{width: 100%; align-items: center; gap: 10px;}
+#root>section>.heading>svg{height: 1em; display: none;}
+#root>section>.heading>.ch>path{fill: rgb(0, 255, 76);}
+#root>section>.heading>.er>path{fill: rgb(255, 76, 106);}
+#root>section>.heading>h4{font-weight: 400; letter-spacing: 1px; font-size: 1.1em;}
+
+.one, .two, .three{
+    align-items: flex-start;
+    gap: 10px;
+}
+.btn{
+    cursor: pointer;
+    font-weight: 500;
+    padding: 7px;
+    min-width: 100px;
+    outline: none;
+    border: none;
+    background: rgb(0, 195, 156);
+    color: #fff;
+    border-radius: 3px;
+    transition: 0.3s ease-in-out;
+    transform-origin: left;
+}
+.btn:hover{transform: translateX(5px);}
+
+.content{
+    padding: 10px;
+    max-width: 50ch;
+    font-size: 0.85em;
+    font-weight: 300;
+    color: #fffa;
+    margin-bottom: 20px;
+}
+
+.b2{background: rgb(0, 170, 189); font-weight: 600;}
+
+@media screen and (max-width:500px) {
+    body{font-size: 14px;}
+    #root{padding: 50px 20px 20px 20px;}
+    #title{font-size: 10em;}
+}

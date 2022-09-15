@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.15s ease-in-out;
+}
+
+body{
+    width: 100%;
+    background: #222;
+    color: #eee;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'poppins';
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+
+#ttl{
+  font-weight: 500;
+  font-size: 1.3em;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}
+
+.container{
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 30px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.holder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+  background: #fff5;
+}
+
+.holding{
+  transform: scale(1.1);
+}
+
+#item{
+  cursor: grab;
+  height: 85px;
+  width: 85px;
+  background: url(ghost1.png) no-repeat center center/cover;
+  filter: contrast(0.9) saturate(0) drop-shadow(0 0 15px #0007);
+}
+#item:active{
+  cursor: grabbing;
+}

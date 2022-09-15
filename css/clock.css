@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@200;300;400;500;600;700;800&family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1.5px;
+    transition: 0.2s ease-in-out;
+}
+
+:root{
+    --bg: linear-gradient(50deg, #191a1a, #232B2F);
+    --bg: #1A2023;
+    --bgl: #2B363B;
+    --text: #FFFAFF;
+    --cont: #FFFAFF;
+    --accent: #00abb4;
+    --transp: #fff2;
+}
+
+::-webkit-scrollbar{width: 0;}
+::selection{background: transparent;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.flex-row{display: flex;}
+.flex-col{display: flex; flex-direction: column;}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'nunito';
+    background: var(--bg);
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+
+@keyframes grad{
+    0%{background-position: bottom left; opacity: 0;}
+    10%{opacity: 0.5;}
+    90%{opacity: 0.5;}
+    100%{background-position: top right; opacity: 0;}
+}
+
+#root{
+    width: 100%;
+    align-items: center;
+    position: relative;
+}
+
+body::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url(stars.jpg) center center/cover;
+    background-size: 150%;
+    mix-blend-mode: screen;
+    opacity: 0.5;
+    filter: saturate(4);
+    animation: grad 180s linear infinite forwards;
+    z-index: -1;
+}
+
+#GMTp1, #GMTp1dg{--accent: rgb(247, 161, 80);}
+
+.analogs{
+    display: none;
+    gap: 120px;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.7s ease-in-out;
+}
+
+.digitals{
+    display: none;
+    gap: 120px;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.7s ease-in-out;
+}
+
+.dgface{position: relative; gap: 7px; opacity: 0.6;}
+
+.dgface .regn{position: relative; bottom: unset; text-align: left;}
+
+.digits{
+    font-family: 'Dosis', sans-serif;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    color: var(--text);
+    gap: 0.5em;
+}
+.digits .hh{color: var(--accent); font-weight: 500 !important;}
+
+.digits .hh, .digits .mm{
+    letter-spacing: 5px;
+    font-weight: 300;
+}
+
+.clockface{
+    --wd: 200px;
+    height: var(--wd);
+    width: var(--wd);
+    border-radius: 50%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition-duration: 0.4s;
+    opacity: 0.6;
+}
+.clockface::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    background: url(dial.png) no-repeat center center/cover;
+    opacity: 0.5;
+    animation: rt1 1400s infinite linear forwards;
+    transform-style: preserve-3d;
+}
+
+.regn{
+    color: var(--text);
+    font-weight: 400;
+    position: absolute;
+    bottom: 3em;
+    font-size: 1em;
+    letter-spacing: 5px;
+    opacity: 0.5;
+    width: 100%;
+    text-align: center;
+}
+
+#GMTp1::after{animation: rt2 1400s infinite linear forwards;}
+
+@keyframes rt1{
+    0%{transform: rotate(0deg);}
+    50%{transform: rotate(360deg);}
+}
+
+@keyframes rt2{
+    0%{transform: rotate(15deg);}
+    50%{transform: rotate(-375deg);}
+}
+
+/* ------------------------------------------------------------------------ */
+
+
+.handsbox{
+    width: var(--wd);
+    height: calc(var(--wd)/2);
+    position: absolute;
+    top: 0;
+    justify-content: center;
+    align-items: flex-end;
+    transform-style: preserve-3d;
+}
+
+.hand{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    transform-origin: bottom center;
+    transition-duration: 0s;
+    border-radius: 50px;
+    transform-style: preserve-3d;
+}
+
+.hourhand{
+    width: 8px;
+    height: 35px;
+    background: var(--accent);
+    z-index: 3;
+}
+.hourhand::after{
+    content: '';
+    background: var(--accent);
+    height: 20px;
+    width: 8px;
+    position: absolute;
+    bottom: -4px;
+    border-radius: 0 0 10px 10px;
+    z-index: inherit;
+}
+
+.minutehand{
+    width: 6px;
+    height: 60px;
+    background: var(--cont);
+    z-index: 2;
+}
+.minutehand::after{
+    content: '';
+    background: var(--cont);
+    height: 20px;
+    width: 6px;
+    position: absolute;
+    bottom: -4px;
+    border-radius: 0 0 10px 10px;
+    z-index: inherit;
+}
+
+.secondhand{
+    /* display: none; */
+    width: 3px;
+    height: 65px;
+    background: var(--transp);
+    z-index: 1;
+}
+
+
+/* ------------------------------------------------------------------------ */
+
+.extras{position: fixed; inset: 0; justify-content: center; align-items: center;}
+
+.alarm{
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    position: relative;
+}
+.fbtn{
+    cursor: pointer;
+    position: fixed;
+    right: 0;
+    height: 45px;
+    padding-left: 20px;
+    border-radius: 50px 0 0 50px;
+    justify-content: flex-start;
+    align-items: center;
+    background: var(--bgl);
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 15px #0002;
+    gap: 12px;
+    opacity: 0.6;
+}
+.fbtn>svg{
+    height: 1.5em;
+    fill: var(--text);
+    transition-duration: 0.4s;
+}
+.fbtn>span{opacity: 0; color: var(--text); transition-duration: 0.3s;}
+
+#addbtn{
+    top: 50px;
+    width: 118px;
+    transform: translateX(67px);
+}
+#addbtn:hover>svg{animation: ring 0.7s ease-in-out 1 forwards;}
+
+@keyframes ring {
+    0%{transform: rotate(0deg);}
+    20%{transform: rotate(30deg);}
+    40%{transform: rotate(-30deg);}
+    60%{transform: rotate(30deg);}
+    80%{transform: rotate(0deg);}
+    100%{transform: rotate(0deg);}
+}
+
+#swbtn{
+    top: 110px;
+    width: 148px;
+    transform: translateX(96.5px);
+}
+#swbtn>svg{height: 1.5em;}
+#swbtn:hover>svg{animation: hop 1.2s ease-in-out 1 alternate;}
+
+@keyframes hop{
+    0%{transform: scale(1) rotate(0deg);}
+    20%{transform: scale(1.2) translateY(-1.5px) rotate(0deg);}
+    30%{transform: scale(1.2) translateY(-1.5px) rotate(-35deg);}
+    50%{transform: scale(1.2) translateY(-1.5px) rotate(35deg);}
+    70%{transform: scale(1.2) translateY(-1.5px) rotate(0deg);}
+    90%{transform: scale(1) rotate(0deg);}
+    100%{transform: scale(1) rotate(0deg);}
+}
+
+#tbtn{
+    top: 170px;
+    width: 110px;
+    transform: translateX(58.5px);
+}
+#tbtn>svg{height: 1.1em;}
+#tbtn:hover>svg{transform: rotate(180deg);}
+
+#sbtn, #abtn{
+    height: unset;
+    padding: 9px 10px 9px 25px;
+    color: var(--text);
+    font-size: 0.85em;
+    letter-spacing: 3px;
+    bottom: 100px;
+    opacity: 1 !important;
+}
+#abtn{
+    bottom: 55px;
+}
+
+.fbtn:hover{transform: translateX(0) !important; background: var(--accent);}
+.fbtn:hover>span{opacity: 1; transition-delay: 0.2s;}
+
+
+/* ------------------------------------------------------------------------ */
+.popup{
+    position: absolute;
+    padding: 30px;
+    min-width: 300px;
+    border-radius: 5px;
+    border-top: 5px solid var(--accent);
+    color: var(--text);
+    box-shadow: 0 0 10px #0002;
+    background: var(--bgl);
+    gap: 5px;
+    z-index: 0;
+}
+
+.popup>.ttl{font-weight: 500; font-size: 1em; opacity: 0.5; letter-spacing: 3px;}
+.popup>.subttl{font-weight: 400; margin-top: 1em; letter-spacing: 3px;}
+
+.arrowstop, .arrowsbot{
+    justify-content: center;
+    gap: 65px;
+    margin-top: 20px;
+    margin-bottom: -10px;
+}
+.arrowsbot{
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+.arrowstop svg, .arrowsbot svg{
+    cursor: pointer;
+    height: 2em;
+    fill: var(--text);
+    opacity: 0.7;
+}
+.arrowsbot svg{transform: rotate(180deg);}
+
+
+#ctime{
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    gap: 10px;
+    color: var(--text);
+    font-size: 2em;
+}
+#settime{
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    gap: 10px;
+    color: var(--text);
+    font-size: 3em;
+}
+#smm,#cmm,#chh,#shh{letter-spacing: 4px;}
+#smm,#shh{text-align: center;}
+#alarmpop>.buttons{
+    margin-top: 10px;
+    justify-content: flex-start;
+    gap: 20px;
+}
+#alarmpop>.buttons>button{
+    cursor: pointer;
+    background: var(--accent);
+    border: none;
+    outline: none;
+    height: 3.5em;
+    width: 3.5em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+#alarmpop>.buttons>button:nth-of-type(2){background: #888;}
+#alarmpop>.buttons>button>svg{
+    fill: var(--text);
+    height: 1.5em;
+}
+
+/* ------------------------------------------------------------------------ */
+
+
+#cpr{
+    padding: 10px;
+    color: var(--text);
+    font-size: 0.6em;
+    letter-spacing: 5px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    body{font-size: 12px;}
+    .analogs, .digitals{
+        gap: 70px;
+        flex-direction: column;
+    }
+    .clockface{transform: scale(0.8); opacity: 1 !important;}
+    .dgface{opacity: 1 !important;}
+    .fbtn{
+        justify-content: flex-end;
+        transform: translateX(0) !important;
+        height: 40px;
+        padding-right: 15px;
+        opacity: 1 !important;
+    }
+    .fbtn>span{opacity: 1;}
+    #addbtn{
+        top: 25px;
+    }
+    #swbtn{
+        top: 80px;
+    }
+    #tbtn{
+        top: 135px;
+    }
+    #sbtn{
+        bottom: 100px;
+    }
+    #abtn{
+        bottom: 45px;
+    }
+    .popup{min-width: unset;}
+    .arrowstop, .arrowsbot{gap: 93px;}
+    #smm,#shh{width: 80px; font-size: 1em;}
+}
+
+@media (min-aspect-ratio: 8/6){
+    body{font-size: 12px;}
+    .analogs{flex-direction: row; gap: 100px;}
+    .clockface{opacity: 1 !important;}
+    .dgface{opacity: 1 !important;}
+}
+
+.hidden{opacity: 0 !important; pointer-events: none !important;}
+.hidden2{transform: translateX(1000%) !important;}
