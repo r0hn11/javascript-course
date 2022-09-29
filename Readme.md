@@ -1,4 +1,4 @@
-Steps to check files:
+#### Steps to check files:
 1. Open root.html
 2. Change the filename in the script tag below body tag in 'root.html'
 3. Note: dont manipulate any other script tags containing other links (i.e. hght.js, font-awesome-kit.js and similar)
